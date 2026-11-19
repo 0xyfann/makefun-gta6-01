@@ -1,3 +1,7 @@
+[![make.fun](https://make.fun/badge/gta6-01.svg)](https://make.fun/bounty/gta6-01)
+[![rank](https://make.fun/badge/gta6-01/0xyfann/makefun-gta6-01/rank.svg)](https://make.fun/bounty/gta6-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
+[![reward](https://make.fun/badge/gta6-01/0xyfann/makefun-gta6-01/reward.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
+
 # SUNDOWN / Port Aurelia
 
 An original, offline, top-down city crime game. Play Mara Venn, a courier helping Inez expose the syndicate controlling the harbor. Explore a 3,200-unit coastal city, take vehicles, evade patrols, recover cash, and finish five linked story assignments. All art is drawn in canvas; sound and the small radio motif are synthesized locally.
@@ -29,7 +33,7 @@ MAKEFUN_OUTPUT_DIR=/tmp/sundown-output node main.ts
 
 `main.ts` copies `game/` and `screenshots/`, then writes `dossier.json` using the unchanged kit library in `vendor/makefun-game.ts` and the starter's exact size caps. Do not edit the generated dossier.
 
-Per the brief, `screenshots/` intentionally contains no images. The vendor rejects an empty screenshot folder, so a submission build becomes runnable after 3–4 genuine browser renders have been added there. Name the cover first alphabetically; each image must be PNG/JPEG, at most 256 KiB, with a long side at most 1280 and a short side at least 480. No screenshot has been created for this entry yet.
+`screenshots/` contains four original renders captured with headless Chromium: `1-foot.jpg` (on foot, cover), `2-drive.jpg` (driving), `3-chase.jpg` (three-star police chase), and `4-mission.jpg` (harbor ledger mission). Each image is 1280x800 and at most 256 KiB.
 
 Local checks:
 
@@ -41,3 +45,7 @@ node tools/browser-check.mjs
 The first checks JS syntax, paths, file/size caps, and the license, then tests `main.ts` twice in a temporary mirror with the supplied fixture images; it compares every copied game file and rebuilds the dossier byte-for-byte. Fixtures never enter this repository. It also confirms the expected empty-image rejection. The browser check connects to a Chromium DevTools instance on port 9222 and the game server on port 8080, exercises presets and controls, checks mission progression, and watches exceptions and external requests. It creates no screenshots. Mission progression checks position the player at objectives to exercise all five chapters reproducibly; walking and driving are tested with real keyboard events.
 
 The sealed competition gate, recording requirements, account ownership, and submission are not evaluated by these local checks. This repository is a local build only; nothing is pushed or submitted.
+
+Bounty: https://make.fun/bounty/gta6-01
+
+Referral: https://make.fun/r/p1x954ca
