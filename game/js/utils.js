@@ -10,6 +10,7 @@ export function circle(ctx, x, y, radius, color) {
   ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x, y, radius, 0, Math.PI * 2); ctx.fill();
 }
 export function moveBody(body, dx, dy, blocked, radius) {
+  // Resolve X before Y so the body can slide when only one axis is blocked.
   const hitX = blocked(body.x + dx, body.y, radius);
   if (!hitX) body.x += dx;
   const hitY = blocked(body.x, body.y + dy, radius);

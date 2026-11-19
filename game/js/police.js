@@ -25,6 +25,7 @@ export function updatePolice(state,dt) {
       if(Math.abs(c.x-rx)<Math.abs(c.y-ry)){tx=rx;ty=roads.reduce((a,b)=>Math.abs(a-p.y)<Math.abs(b-p.y)?a:b);}
       else {ty=ry;tx=roads.reduce((a,b)=>Math.abs(a-p.x)<Math.abs(b-p.x)?a:b);}
     }
+    // Wrap the steering error so the patrol turns through the shorter angle.
     const desired=Math.atan2(ty-c.y,tx-c.x),diff=Math.atan2(Math.sin(desired-c.angle),Math.cos(desired-c.angle));
     c.angle+=clamp(diff,-2.6*dt,2.6*dt);
     c.speed=120+state.wanted*24;

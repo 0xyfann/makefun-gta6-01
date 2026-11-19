@@ -9,6 +9,7 @@ const timeText = seconds => {
   return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
 };
 
+// Build the HUD once and cache its fields for subsequent frame updates.
 function ensureHUD() {
   if (nodes) return;
   root = document.querySelector('#hud');

@@ -1,4 +1,5 @@
 import { distance, circle } from './utils.js';
+// A shot starts its cooldown and adds both the projectile and muzzle flash.
 export function fireWeapon(state,aim) {
   if(state.fireCooldown>0)return;
   state.fireCooldown=.22;state.wanted=Math.min(5,Math.max(2,state.wanted));state.heat=23;

@@ -26,6 +26,7 @@ export function updateTraffic(state, dt) {
     for (const other of state.cars) {
       if (other === c) continue;
       const dx = other.x - c.x, dy = other.y - c.y;
+      // A positive dot product puts the other car ahead of this car.
       if (Math.hypot(dx,dy) < 74 && dx * Math.cos(c.angle) + dy * Math.sin(c.angle) > 0) stop = true;
     }
     if (!stop) {

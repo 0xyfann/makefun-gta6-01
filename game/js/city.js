@@ -1,3 +1,4 @@
+// The seeded layout is shared by rendering and building collision checks.
 export const WORLD = 3200;
 export const roads = [400, 1000, 1600, 2200, 2800];
 

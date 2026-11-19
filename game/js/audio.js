@@ -1,3 +1,4 @@
+// Create the audio graph lazily when a user gesture unlocks playback.
 let context=null,master=null,engine=null,siren=null,melodyClock=0;
 export function unlockAudio(){
   if(!context){

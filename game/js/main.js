@@ -11,6 +11,7 @@ import { saveGame, loadGame } from './save.js';
 import { distance, label } from './utils.js';
 const canvas=document.getElementById('world'),ctx=canvas.getContext('2d',{alpha:false});
 const keys=new Set(),mouse={x:0,y:0,down:false};
+// Only the listed scene query values select a preset; other values open the title.
 const validScenes=['foot','drive','chase','mission'];
 const requested=new URLSearchParams(location.search).get('scene');
 const scene=validScenes.includes(requested)?requested:'title';

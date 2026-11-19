@@ -5,6 +5,7 @@ export function enterOrExitCar(state) {
   const p=state.player;
   if(p.car){
     const c=p.car;
+    // Test both exit points perpendicular to the car's heading.
     for(const side of [-1,1]) {
       const x=c.x-Math.sin(c.angle)*43*side,y=c.y+Math.cos(c.angle)*43*side;
       if(!isBlocked(x,y,10)) {p.x=x;p.y=y;c.parked=true;c.occupied=false;c.speed=0;p.car=null;state.toast='Back on foot.';return;}

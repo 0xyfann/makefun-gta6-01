@@ -31,6 +31,7 @@ export function updateMissions(state,dt){
     if(m.kind==='cash'){m.collected++;m.objective=`Collect syndicate cash drops • ${m.collected} / 3`;
       const next=state.drops.find(d=>!d.taken);m.target=next||null;if(m.collected>=3)completeChapter(state);}
   }
+  // Replenish drops if earlier pickups left too few for the active cash chapter.
   if(m.kind==='cash'&&state.drops.every(d=>d.taken)&&m.collected<3){state.drops=createCashDrops();m.target=state.drops[0];}
   const clinic={x:1488,y:1280};
   if(state.player.health<100&&distance(state.player,clinic)<45){state.player.health=Math.min(100,state.player.health+dt*12);}

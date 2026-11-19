@@ -66,6 +66,7 @@ export function drawMinimap(state = {}) {
   }
   ctx.setLineDash([]);
 
+  // Project world positions onto the canvas using each axis's own scale.
   const point = (x, y) => ({ x: Number(x) * sx, y: Number(y) * sy });
   const target = state.mission?.target;
   if (target && Number.isFinite(Number(target.x)) && Number.isFinite(Number(target.y))) {
