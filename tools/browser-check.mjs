@@ -1,4 +1,4 @@
-// Real Chromium smoke checks; no image files are produced.
+// Exercise live gameplay through Chromium DevTools without creating screenshots.
 import assert from 'node:assert/strict';
 const origin = ['http:', '', '127.0.0.1:8080'].join('/');
 const debug = ['http:', '', '127.0.0.1:9222'].join('/');

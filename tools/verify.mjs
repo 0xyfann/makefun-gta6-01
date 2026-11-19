@@ -1,4 +1,4 @@
-// Offline packaging and reference checks; fixture images never enter this repository.
+// Check offline references and deterministic packaging in an isolated temporary copy.
 import assert from 'node:assert/strict';
 import { cpSync, existsSync, lstatSync, mkdtempSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
