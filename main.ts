@@ -1,5 +1,5 @@
-// Package the playable Port Aurelia shift and describe the exact copied bytes.
-// Keep this entrypoint free of game logic so it also runs in the offline grader.
+// Copy the playable game and screenshots before describing their packaged bytes.
+// Packaging stays separate from gameplay and uses only the offline starter kit.
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
